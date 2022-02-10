@@ -1,0 +1,126 @@
+<html>
+    <head>
+<script>
+function validateHobbies(){
+    var hobbies = document.getElementsByName("hobbies");
+    var cnt=0;
+    var str="";
+    for(var i=0; i<hobbies.length ; i++){
+        if(hobbies[i].checked)
+        {
+            cnt++;
+            str += hobbies[i].value +",";
+        }
+    }
+    alert("you selected" + str);
+    exit;
+    if(cnt>=2){
+        document.getElementById("errhobbies").innerHTML="";
+        return true;
+    }else
+    {
+        document.getElementById("errhobbies").innerHTML = "please select minimum two hobbies";
+        return false;
+    }
+    
+}
+   
+function validateDegree() {
+            var degree = document.getElementsByName("degree");
+            for (var i = 0; i < degree.length; i++) {
+                if (degree[i].checked) {
+                    document.getElementById("errdegree").innerHTML = "";
+                    return true;
+                }
+            }
+            document.getElementById("errdegree").innerHTML = "pls select minimum one degree";
+            return false;
+        }
+
+
+
+
+
+    function validate(){
+    var flag=validateHobbies();
+  alert("flag" +flag);
+     //var flag1=validateDegree(); 
+    //alert(flag1);
+   
+    if(flag ){
+        return true;
+    }else{
+        return false;
+    }
+    }
+</script>
+    </head>
+    <body>
+        <div style="border: solid black ; ">
+        <h1 style="text-align: center;">Exam Form</h1>
+       <table cellspacing = "20" >
+
+        <form action="./thankyou.html" target="_blank" method="get" onsubmit="return validate()" >
+     <tbody>
+        <tr>
+         <td>Name :</td>
+         <td><input type="text" id="nm" name="nm"><span style="color: red;">*</span></td>
+            
+    </tr>
+    <tr>
+        <td valign="TOP">Address :</td>
+       <td>
+           <textarea rows="5" cols="50" id="add" name="add"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td valign="TOP">University</td>
+        <td>
+            <select id="university" name="university">
+                <option value="pune">Pune University</option>
+                <option value="Mumbai"selected>Mumbai University</option>
+                <option value="bhopal">Bhopal University</option>
+                <option value="Kolhapur">Kolhapur University</option>
+            </select>
+        </td>
+        
+    </tr>
+    <tr>
+        <td>Hobbies :</td>
+        <td>
+            <input type="checkbox" id="reading" name="hobbies" value="reading" checked><label for="reading"></label> Reading</label><br/>
+            <input type="checkbox" id="biking" name="hobbies" value="biking"> <label for="biking">Biking</label> <br>
+            <input type="checkbox" id="Sleeping" name="hobbies" value="Sleeping"> <label for="Sleeping">Sleeping</label> <br>
+            <input type="checkbox" id="Eating" name="hobbies" value="Eating"> <label for="Eating">Eating</label> <br>
+            <input type="checkbox" id="Riding" name="hobbies" value="Riding"> <label for="Riding">Riding</label> <br></td>
+            <td><span id="errhobbies" ></span></td>
+           
+    </tr>
+    <tr>
+        <td> Degree :</td>
+        <td><input type="radio" id="btech" name="degree" value="btech" checked> <label for="btech">Btech</label><br>
+            <input type="radio" id="be" name="degree" value="be"> <label for="be">BE</label> <br>
+            <input type="radio" id="bsc" name="degree" value="bsc"> <label for="bsc">Bsc</label> <br>
+            <input type="radio" id="ba" name="degree" value="ba"> <label for="ba">BA</label> <br>
+            <input type="radio" id="bcom" name="degree" value="bcom"> <label for="bcom">B.Com</label><br></td>
+            <td><span id="errdegree "></span></td>
+    </tr>
+    <tr>
+        <td> Gender:</td>
+        <td><input type="radio" id="male" name="gender" checked> <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender"> <label for="female">Female</label> <br>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td> <input type="submit" name="btn" value="Submit">&nbsp;&nbsp;&nbsp;
+            <input type="reset" name="btn" value="clear"></td>
+            <td></td>
+    </tr>
+</tbody>
+</form>
+</table>
+</div>
+    </body>
+</html>
