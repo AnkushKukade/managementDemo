@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style rel="stylesheet">
+      span {
+        color: red;
+        text-shadow: 2px 2px 2px #000;
+      }
+    </style>
+    <script>
+      function displayClock() {
+        var today = new Date();
+        // var h = today.getHours();
+        // var m = today.getMinutes();
+        // var s = today.getSeconds();
+        curtime = today.toLocaleTimeString();
+        document.getElementById("currtime").innerHTML = curtime + " " + today.getTime();
+      }
+      var t;
+      function startClock() {
+       t = setInterval(displayClock, 1000);
+      }
+      function stopClock() {
+        clearInterval(t);
+      };
+      dd = () => {
+        clearInterval(t);
+      }
+      setTimeout(function(){
+        clearInterval(t);
+      }, 5000);
+
+    </script>
+  </head>
+  <body>
+    <h1>This is Date Time Demo Page</h1>
+    <h1>Current Time is : <span id="currtime">...</span></h1>
+    <div>
+      <button onclick="startClock()">Start Clock</button> -
+      <button onclick="stopClock()">Stop Clock</button>
+    </div>
+  </body>
+</html>
