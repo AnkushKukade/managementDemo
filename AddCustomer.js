@@ -27,6 +27,7 @@ function AddCustomer() {
     event.defaultPrevented();
   }
   return (<div className='container'>
+  <h1>We are using git . checking bracnching</h1>
       <div className='app-wrapper'>
           <div>
               <h2 className='title'> Add new Customer</h2>
